@@ -1,0 +1,22 @@
+{
+    "name": "adiyatma/mymvc-v1.1",
+    "description": "just a simple mvc",
+    "type": "project",
+    "autoload": {
+        "classmap": [
+            "app/controllers",
+            "app/models",
+            "app/library"
+        ]
+    },
+    "require": {
+        "illuminate/database": "^5.2",
+	    "altorouter/altorouter": "^1.2"
+    },
+    "authors": [
+        {
+            "name": "adiatma",
+            "email": "adiyatmakamarudin@gmail.com"
+        }
+    ]
+}
