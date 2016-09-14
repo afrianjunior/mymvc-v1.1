@@ -1,6 +1,6 @@
 ## mymvc-v1.1
 
-just a simple mymvc.
+just a simple mvc.
 
 
 ## composer
