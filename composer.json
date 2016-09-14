@@ -6,7 +6,10 @@
         "classmap": [
             "app/controllers",
             "app/models",
-            "app/library"
+            "app/core"
+        ],
+        "files": [
+            "helpers.php"
         ]
     },
     "require": {

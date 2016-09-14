@@ -2,10 +2,19 @@
 
 $router = new AltoRouter();
 
+/**
+* -----------------------------------------------------------
+* ROUTE YOUR APP
+* -----------------------------------------------------------
+* please map your app in here
+*
+*/
 
 $router->map('GET','/', 'HomeController@index','home');
 
 $match = $router->match();
+
+$GLOBALS['router'] = $router;
 
 list($controller, $method ) = explode('@', $match['target']);
 
