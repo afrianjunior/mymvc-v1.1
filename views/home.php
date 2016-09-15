@@ -19,6 +19,6 @@
 </head>
 <body>
 	<h1 class="welcome">MYMVC-V.1.1</h1>
-	<p class="desc">Welcome to mymvc</p>
+	<p class="desc">Please <a href="<?php echo $router->generate('auth-register') ?>">register</a> | <a href="<?php echo $router->generate('auth-login') ?>">login</a></p>
 </body>
 </html>
