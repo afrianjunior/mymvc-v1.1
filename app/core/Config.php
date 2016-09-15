@@ -2,6 +2,11 @@
 
 class Config
 {
+	/**
+	* Handle get file in directory config/common.php
+	*
+	* @param $path mixed | default null
+	*/
 	public static function get($path = null)
 	{
 		if($path) {

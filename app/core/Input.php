@@ -2,6 +2,12 @@
 
 class Input
 {
+	/**
+	* Handle check request
+	*
+	* @param $type POST | GET
+	* @return bool true | false
+	*/
 	public static function isExists($type = 'POST')
 	{
 		switch ($type) {
@@ -17,6 +23,11 @@ class Input
 		}
 	}
 
+	/**
+	* Handle get all request
+	*
+	* @return verbs GET, POST | array
+	*/
 	public static function all()
 	{
 		$method = $_SERVER['REQUEST_METHOD'];
@@ -33,6 +44,11 @@ class Input
 		}
 	}
 
+	/**
+	* Handle get per request
+	*
+	* @return verbs GET, POST | string
+	*/
 	public static function get($item)
 	{
 		if(isset($_POST[$item])){

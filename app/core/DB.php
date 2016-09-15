@@ -2,8 +2,10 @@
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+// instate capsule
 $capsule = new Capsule;
 
+// set database connection
 $capsule->addConnection([
     'driver'    => env('driver'),
     'host'      => env('host'),
@@ -15,6 +17,7 @@ $capsule->addConnection([
     'prefix'    => '',
 ]);
 
+// set capsule in global access
 $capsule->setAsGlobal();
 
 $capsule->bootEloquent();

@@ -2,6 +2,11 @@
 
 class Redirect
 {
+	/**
+	* Handle redirect with location
+	*
+	* @param $loaction dir /..
+	*/
 	public static function to($location)
 	{
 		if($location){
@@ -19,6 +24,11 @@ class Redirect
 		return false;
 	}
 
+	/**
+	* Handle redirect back with flash messages
+	*
+	* @param $loaction back dir /..
+	*/
 	public static function back(array $data = [])
 	{
 		if(count($data)) {

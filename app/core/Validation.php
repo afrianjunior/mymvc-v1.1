@@ -4,11 +4,27 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Validation
 {
+	/**
+	* @var $passed true | false
+	*/
 	private $passed = false;
-	private $errors = [];
-	private $db = null;
-	private $allowed_rules = ['required','min','max','matches','unique'];
 
+	/**
+	* @var $errors array
+	*/
+	private $errors = [];
+	
+	/**
+	* @var $allowedRules array
+	*/
+	private $allowedRules = ['required','min','max','matches','unique'];
+
+	/**
+	* Check validation
+	*
+	* @param $source string
+	* @param $items array 
+	*/
 	private function check($source, array $items = [])
 	{
 		foreach ($items as $item => $rules) {
@@ -49,6 +65,12 @@ class Validation
 		return $this;
 	}
 
+	/**
+	* Handle validation
+	*
+	* @param $source string
+	* @param $items array 
+	*/
 	public function validate($source, array $items = [])
 	{
 		foreach ($items as $field => $rules) {
@@ -74,24 +96,44 @@ class Validation
 		$this->check($source, $this->rules);
 	}
 
+	/**
+	* Set errors
+	*
+	* @param $error 
+	*/
 	private function addError($error)
 	{
 		$this->errors[] = $error;
 	}
 
+	/**
+	* Return errors array
+	*
+	* @return array 
+	*/
 	public function errors()
 	{
 		return $this->errors;
 	}
 
+	/**
+	* Handle passed passed validation
+	*
+	* @return bool true | false 
+	*/
 	public function passed()
 	{
 		return $this->passed;
 	}
 
+	/**
+	* Check rules in validation
+	*
+	* @return bool true | false 
+	*/
 	private function isInRule($rule)
 	{
-		if(!in_array($rule, $this->allowed_rules)){
+		if(!in_array($rule, $this->allowedRules)){
 			throw new \Exception("{$rule} not allowed", 1);
 		}
 		return true;
