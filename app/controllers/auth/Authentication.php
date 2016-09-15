@@ -22,8 +22,11 @@ class Authentication
 	*/
 	public function __construct()
 	{
+		// set session name
 		self::$sessionName = Config::get('session.session_name');
+		// set redirect to if success login
 		self::$redirectTo = '/admin/overview';
+		// set redirect back
 		self::$redirectBack = '/auth/login';
 	}
 
