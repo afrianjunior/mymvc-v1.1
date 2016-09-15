@@ -53,8 +53,9 @@ class Authentication
 			$currentSession = Session::get(self::$sessionName);
 			$user = User::where('id', '=', $currentSession)->first();
 			return $user;
+		} else {
+			return false;	
 		}
-		return false;
 	}
 
 	/**
