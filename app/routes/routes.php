@@ -18,8 +18,6 @@ $router->map('GET','/admin/overview', 'Overview@index','admin-overview');
 * URI AUTHENTICATION
 * -----------------------------------------------------------
 */
-
-$router->map('GET','/auth', 'Authentication@index','auth');
 $router->map('GET','/auth/login', 'Authentication@login','auth-login');
 $router->map('POST','/auth/check', 'Authentication@check','auth-check');
 $router->map('GET','/auth/logout', 'Authentication@logout','auth-logout');
