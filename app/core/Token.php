@@ -2,16 +2,39 @@
 
 class Token
 {
-	public static function generate()
+	/**
+	*  @var $tokenName
+	*/
+	protected static $tokenName;
+
+	/**
+	* Setting token name
+	* 
+	*/
+	public function __construct()
 	{
-		return Session::put(Config::get('session.token_name'), md5(uniqid()));
+		self::$tokenName = Config::get('session.token_name');
 	}
 
+	/**
+	* Handle generate token
+	*
+	* @return md5 generate
+	*/
+	public static function generate()
+	{
+		return Session::put(self::$tokenName, md5(uniqid()));
+	}
+
+	/**
+	* Handle to match token
+	*
+	* @return bool true | false
+	*/
 	public static function match($token)
 	{
-		$token_name = Config::get('session.token_name');
-		if(Session::exists($token_name) && $token === Session::get($token_name)){
-			Session::delete($token_name);
+		if(Session::exists(self::$tokenName) && $token === Session::get(self::$tokenName)){
+			Session::delete(self::$tokenName);
 			return true;
 		}
 		return false;

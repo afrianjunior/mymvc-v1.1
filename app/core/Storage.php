@@ -49,7 +49,7 @@ class Storage
 	*/
 	public static function setDestination($filename)
 	{
-		$destination = BASE_URL . 'app/resource/uploads/' . $filename;
+		$destination = BASE_URL . 'app/resources/uploads/' . $filename;
 		return $destination;
 	}
 
