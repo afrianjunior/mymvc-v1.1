@@ -8,6 +8,18 @@ $router->map('GET','/', 'HomeController@index','home');
 
 ```
 
+and route alias
+
+```php
+
+<?php echo $route->generate('home') ?>
+
+// with id
+
+<?php echo $route->generate('user-edit', ['id' => $id]) ?>
+
+```
+
 ## CONTROLLER
 
 go to directory app/controllers/ :
@@ -90,6 +102,65 @@ $validation->passed();
 // errors
 
 $validation->errors();
+
+```
+
+## TOKEN
+
+set token name in directory app/config/common.php
+
+```php
+
+/**
+* ----------------------------------------
+* Setting session
+* ----------------------------------------
+*/
+
+'session' => [
+	'session_name' => '_user',
+	'token_name' => '_token'
+]
+
+```
+
+and generate token 
+
+```php
+
+<?php echo Token::generate() ?>
+
+```
+
+match token
+
+```php
+
+if(!Token::match(Input::get('token'))){
+	return Redirect::back();
+}
+
+```
+
+## INPUT
+
+```php
+
+Input::all() // get all request
+
+Input::get('item') // get the item in request
+
+```
+
+## REDIRECT
+
+```php
+
+Redirect::to('/') // your uri
+
+Redirect::back(); // back uri
+
+Redirect::back(['key' => 'item', 'values' => 'messages']); // back with message
 
 ```
 
