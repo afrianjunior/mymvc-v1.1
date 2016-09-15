@@ -8,7 +8,7 @@ Please download, clone, or fork this repository.
 
 ## How to run mymvc-v1.1
 
-Previously please install composer if you not have [composer]('https://getcomposer.org/') and after install composer follow a few steps above :
+Previously please install composer if you not have [composer](https://getcomposer.org/) and after install composer follow a few steps above :
 
 ## step 1
 
