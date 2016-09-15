@@ -47,3 +47,5 @@ php -S localhost:9000
 
 ```
 
+more [documentation](https://github.com/adiatma/mymvc-v1.1/blob/master/DOCUMENTATION.md)
+
